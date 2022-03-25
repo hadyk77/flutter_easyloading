@@ -25,19 +25,20 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-import './widgets/container.dart';
-import './widgets/progress.dart';
-import './widgets/indicator.dart';
-import './widgets/overlay_entry.dart';
-import './widgets/loading.dart';
 import './animations/animation.dart';
 import './theme.dart';
+import './widgets/container.dart';
+import './widgets/indicator.dart';
+import './widgets/loading.dart';
+import './widgets/overlay_entry.dart';
+import './widgets/progress.dart';
 
 /// loading style
 enum EasyLoadingStyle {
   light,
   dark,
   custom,
+  none,
 }
 
 /// toast position
@@ -165,7 +166,7 @@ class EasyLoading {
 
   /// background color of loading, only used for [EasyLoadingStyle.custom].
   Color? backgroundColor;
-  
+
   /// boxShadow of loading, only used for [EasyLoadingStyle.custom].
   List<BoxShadow>? boxShadow;
 

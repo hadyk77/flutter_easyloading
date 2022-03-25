@@ -22,11 +22,11 @@
 
 import 'package:flutter/material.dart';
 
-import './easy_loading.dart';
 import './animations/animation.dart';
-import './animations/opacity_animation.dart';
 import './animations/offset_animation.dart';
+import './animations/opacity_animation.dart';
 import './animations/scale_animation.dart';
+import './easy_loading.dart';
 
 class EasyLoadingTheme {
   /// color of indicator
@@ -49,9 +49,11 @@ class EasyLoadingTheme {
   static Color get backgroundColor =>
       EasyLoading.instance.loadingStyle == EasyLoadingStyle.custom
           ? EasyLoading.instance.backgroundColor!
-          : EasyLoading.instance.loadingStyle == EasyLoadingStyle.dark
-              ? Colors.black.withOpacity(0.9)
-              : Colors.white;
+          : EasyLoading.instance.loadingStyle == EasyLoadingStyle.none
+              ? Colors.transparent
+              : EasyLoading.instance.loadingStyle == EasyLoadingStyle.dark
+                  ? Colors.black.withOpacity(0.9)
+                  : Colors.white;
 
   /// boxShadow color of loading
   static List<BoxShadow>? get boxShadow =>
