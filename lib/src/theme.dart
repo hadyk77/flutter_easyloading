@@ -31,7 +31,8 @@ import './easy_loading.dart';
 class EasyLoadingTheme {
   /// color of indicator
   static Color get indicatorColor =>
-      EasyLoading.instance.loadingStyle == EasyLoadingStyle.custom
+      EasyLoading.instance.loadingStyle == EasyLoadingStyle.custom ||
+              EasyLoading.instance.loadingStyle == EasyLoadingStyle.none
           ? EasyLoading.instance.indicatorColor!
           : EasyLoading.instance.loadingStyle == EasyLoadingStyle.dark
               ? Colors.white
